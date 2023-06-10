@@ -1,13 +1,8 @@
 'use client'
 import React from 'react'
 import { LuMoonStar } from 'react-icons/lu';
-// import { ToggleSlider } from 'react-toggle-slider';
-// import { useToggleSlider } from "react-toggle-slider"
-// import Toggle from 'react-toggle';
-
 
 const Header = () => {
-    // const [toggleSlider, active] = useToggleSlider({ barBackgroundColor: "#848484", barBackgroundColorActive: '#2B2B2E', barHeight: 16, barWidth: 36, handleSize: 15 });
 
     return (
         <header className='border-bottom border-text1 h-[10vh]'>
