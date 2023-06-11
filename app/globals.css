@@ -174,3 +174,20 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+@media screen and (min-width: 480px) {
+  .swiper {
+    height: calc(100vh - 10vh);
+    padding-bottom: 10vh;
+  }
+}
+
+
+.bg-img {
+  height: inherit;
+  background-image: url(/youtube-bg.svg);
+  background-repeat: no-repeat, repeat;
+  width: inherit;
+  border: 2px solid white;
+  background-position: center;
+}

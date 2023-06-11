@@ -1,7 +1,7 @@
 "use client"
 import CarouselComponent from "@/components/CarouselComponent";
 import React, { useRef } from "react";
-import { YoutubeSVG, Image, Voice, GPT } from '../components/SVG';
+import { Youtube, Image, Voice, GPT } from '../components/SVG';
 
 
 // import Swiper core and required modules
@@ -17,7 +17,6 @@ import 'swiper/css/scrollbar';
 
 
 export default function Home() {
-  const swiperRef = useRef();
 
   const prevRef = useRef(null);
   const nextRef = useRef(null);
@@ -30,7 +29,7 @@ export default function Home() {
       left: '/assets/youtube-left.png', right: '/assets/youtube-right.png',
       gradient: 'youtube-gradient',
       button_gradient: 'youtube-button-gradient',
-      svg: <YoutubeSVG />
+      svg: <Youtube />
     },
     {
       id: 2,
@@ -65,7 +64,7 @@ export default function Home() {
     <div >
       <Swiper
         modules={[Navigation, Pagination, Scrollbar, A11y]}
-        spaceBetween={50}
+        spaceBetween={100}
         slidesPerView={1}
         pagination={{ clickable: true }}
         loop={true}
@@ -84,13 +83,13 @@ export default function Home() {
           "--swiper-pagination-bullet-horizontal-gap": "6px",
         }}
       >
-        {component_data.map((item) => <SwiperSlide key={item.id} className='w-screen'><CarouselComponent data={item}>{item.svg}</CarouselComponent></SwiperSlide>)}
-        <div ref={prevRef} className="hidden md:flex w-[60px] h-[40px] border-[1px] border-[#454545] flex items-center justify-center rounded-[100px] arrow-right absolute left-[10%] top-[50%] cursor-pointer z-50 hover:border-white" >
+        {component_data.map((item) => <SwiperSlide key={item.id} className=''><CarouselComponent data={item}>{item.svg}</CarouselComponent></SwiperSlide>)}
+        <div ref={prevRef} className="hidden lg:flex w-[60px] h-[40px] border-[1px] border-[#454545] flex items-center justify-center rounded-[100px] absolute left-[10%] top-[50%] cursor-pointer z-50 hover:border-white" >
           <svg width="36" height="16" viewBox="0 0 36 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M8 16L1.39876e-06 8L8 -1.39876e-06L9.425 1.4L3.825 7L36 6.99999L36 8.99999L3.825 9L9.425 14.6L8 16Z" fill="#A8A8A8" />
           </svg>
         </div>
-        <div ref={nextRef} className="hidden md:flex w-[60px] h-[40px]  border-[1px] border-[#454545] flex items-center justify-center rounded-[100px] arrow-right absolute z-50  right-[10%] cursor-pointer top-[50%] hover:border-white" >
+        <div ref={nextRef} className="hidden lg:flex w-[60px] h-[40px]  border-[1px] border-[#454545] flex items-center justify-center rounded-[100px] absolute z-50  right-[10%] cursor-pointer top-[50%] hover:border-white" >
           <svg width="36" height="16" viewBox="0 0 36 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M28 -6.99382e-07L36 8L28 16L26.575 14.6L32.175 9L6.11959e-07 9L7.86805e-07 7L32.175 7L26.575 1.4L28 -6.99382e-07Z" fill="#A8A8A8" />
           </svg>
